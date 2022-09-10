@@ -8,7 +8,7 @@ addLayer("a", {
     }},
     color: "#4BDC13",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "a points", // Name of prestige currency
+    resource: "A points", // Name of prestige currency
     baseResource: "bytes", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -24,5 +24,12 @@ addLayer("a", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true}, 
+    upgrades: {
+      11: {
+        title: "Initiate!",
+        description: "Officially start the game. Have fun! (You start gaining a byte per second.)",
+        cost: new Decimal(10)
+      }
+    }
 })
