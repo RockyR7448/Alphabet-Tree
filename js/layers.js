@@ -29,7 +29,7 @@ addLayer("a", {
       11: {
         title: "Initiate!",
         description: "Officially start the game. Have fun! (You start gaining a byte per second.)",
-        cost: new Decimal(10)
+        cost: new Decimal(1)
       },
       12: {
         title: "Better CPU",
