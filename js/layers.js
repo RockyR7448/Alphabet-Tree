@@ -30,6 +30,21 @@ addLayer("a", {
         title: "Initiate!",
         description: "Officially start the game. Have fun! (You start gaining a byte per second.)",
         cost: new Decimal(10)
+      },
+      12: {
+        title: "Better CPU",
+        description: "Your byte gain is boosted.",
+        unlocked() {
+          return hasUpgrade(this.layer, 11);
+        },
+        effect() {
+          let eff = new Decimal(2);
+          
+          return eff;
+        },
+        effectDisplay() {
+          return format(this.effect) + "x";
+        }
       }
     }
 })
